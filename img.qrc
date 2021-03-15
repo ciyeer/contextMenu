@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/contextmenu.css</file>
+        <file>img/Logo.png</file>
+    </qresource>
+</RCC>

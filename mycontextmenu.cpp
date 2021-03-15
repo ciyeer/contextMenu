@@ -12,15 +12,7 @@ MyContextMenu::MyContextMenu(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QFile file("C:/Users/cymer/Desktop/20121/Qt/day2/Test/contextMenu/contextmenu.css");
-    file.open(QFile::ReadOnly);//读取qss文件，设置样式
-    if(file.isOpen())
-    {
-        QString qss = file.readAll();
-        //qDebug()<<qss;
-        this->setStyleSheet(qss);
-    }
-    file.close();
+    CommonHelper::setStyle(":/img/contextmenu.css");
 
     //带选择的QAction应该设置为类的成员变量，以便存住当前状态
     colorChat = new QAction(QString::fromLocal8Bit("   使用多彩气泡"),this);
@@ -43,10 +35,11 @@ MyContextMenu::~MyContextMenu()
 
 void MyContextMenu::contextMenuEvent(QContextMenuEvent *event)
 {
+    Q_UNUSED(event)
     QAction * start = new QAction(QStringLiteral("   复制"),this);
     QAction * allchoose = new QAction(QStringLiteral("   全部选择"),this);
     QAction * choosesome = new QAction(QStringLiteral("   多选"),this);
-    choosesome->setIcon(QIcon(":/duoxuankuang.png"));
+    //choosesome->setIcon(QIcon(":/img/Logo.png"));
     QAction * showType = new QAction(QStringLiteral("   显示比例"),this);
     QAction * setColorChat = new QAction(QStringLiteral("   设置多彩气泡"),this);
     QAction * quit = new QAction(QStringLiteral("   清屏"),this);
@@ -69,12 +62,12 @@ void MyContextMenu::contextMenuEvent(QContextMenuEvent *event)
     menu->addMenu(m);
     menu->addSeparator();
     menu->addAction(showType);
-    menu->addAction(colorChat);
+    //menu->addAction(colorChat);
     menu->addAction(setColorChat);
     menu->addSeparator();
     menu->addAction(quit);
 
     menu->exec(QCursor::pos());
 
-    return QWidget::contextMenuEvent(event);
+    //return QWidget::contextMenuEvent(event);
 }

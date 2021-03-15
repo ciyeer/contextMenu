@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QContextMenuEvent>
+#include "commonhelper.h"
 
 namespace Ui {
 class MyContextMenu;
