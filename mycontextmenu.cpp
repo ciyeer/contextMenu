@@ -37,12 +37,12 @@ void MyContextMenu::contextMenuEvent(QContextMenuEvent *event)
 {
     Q_UNUSED(event)
     QAction * start = new QAction(QStringLiteral("   复制"),this);
-    QAction * allchoose = new QAction(QStringLiteral("   全部选择"),this);
-    QAction * choosesome = new QAction(QStringLiteral("   多选"),this);
-    //choosesome->setIcon(QIcon(":/img/Logo.png"));
+    QAction * allchoose = new QAction(QStringLiteral("   粘贴"),this);
+    QAction * choosesome = new QAction(QStringLiteral("   设置"),this);
+    choosesome->setIcon(QIcon(":/img/Logo.png"));
     QAction * showType = new QAction(QStringLiteral("   显示比例"),this);
-    QAction * setColorChat = new QAction(QStringLiteral("   设置多彩气泡"),this);
-    QAction * quit = new QAction(QStringLiteral("   清屏"),this);
+    QAction * setColorChat = new QAction(QStringLiteral("   清屏"),this);
+    QAction * quit = new QAction(QStringLiteral("   退出"),this);
 
     QMenu * m = new QMenu(this);
     m->setFixedWidth(100);
